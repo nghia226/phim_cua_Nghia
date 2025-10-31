@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Chi tiết phim</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <a href="index.html"><h1>PhimMoi <span style="color:#e50914;">Chill</span></h1></a>
+            </div>
+        </div>
+    </header>
+
+    <section class="movie-detail">
+        <div class="container">
+            <div class="detail-content">
+                <div class="poster">
+                    <img id="detailPoster" src="" alt="">
+                </div>
+                <div class="info">
+                    <h1 id="detailTitle"></h1>
+                    <p><strong>Năm:</strong> <span id="detailYear"></span></p>
+                    <p><strong>Thể loại:</strong> <span id="detailGenre"></span></p>
+                    <p><strong>Quốc gia:</strong> <span id="detailCountry"></span></p>
+                    <p><strong>Diễn viên:</strong> <span id="detailActors"></span></p>
+                    <p id="detailDesc"></p>
+
+                    <!-- Nút xem phim -->
+                    <button class="btn-play" onclick="playEpisode(1)">Xem Phim</button>
+
+                    <!-- Danh sách tập -->
+                    <div id="episodeList" class="episode-list"></div>
+                </div>
+            </div>
+
+            <!-- 4 Phim gợi ý: 2x2 -->
+            <h2>Phim Gợi Ý</h2>
+            <div class="related-grid" id="relatedMovies">
+                <!-- 4 phim sẽ được load 2x2 -->
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 PhimMoi Chill Clone</p>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const movieId = parseInt(urlParams.get('id')) || 1;
+        loadMovieDetail(movieId);
+    </script>
+</body>
+</html>
